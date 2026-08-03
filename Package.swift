@@ -18,8 +18,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "CSystem",
-            url: "https://github.com/swift-precompiled/swift-system/releases/download/1.7.5/CSystem-5180256c9aa0a74c1cb0704f09c157aa59392d3624f482c9b74418768e4afdae.xcframework.zip",
-            checksum: "5180256c9aa0a74c1cb0704f09c157aa59392d3624f482c9b74418768e4afdae"
+            url: "https://github.com/swift-precompiled/swift-system/releases/download/1.7.5/CSystem-e0f0d66ba6743424fc4376b962744c1b86b777a3b9afa0d7f10de8ea1996f634.xcframework.zip",
+            checksum: "e0f0d66ba6743424fc4376b962744c1b86b777a3b9afa0d7f10de8ea1996f634"
         ),
         .target(
             name: "SystemPackage_Aggregation",
@@ -27,8 +27,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "SystemPackage",
-            url: "https://github.com/swift-precompiled/swift-system/releases/download/1.7.5/SystemPackage-126c8587a74118b5781f748f820c60d7f4ac4ad51a6f978d0463c46ff59fc0b3.xcframework.zip",
-            checksum: "126c8587a74118b5781f748f820c60d7f4ac4ad51a6f978d0463c46ff59fc0b3"
+            url: "https://github.com/swift-precompiled/swift-system/releases/download/1.7.5/SystemPackage-d9f4985e308be4f30939e67b3a208d9730ebe7a91d538d3b26a1473de906f830.xcframework.zip",
+            checksum: "d9f4985e308be4f30939e67b3a208d9730ebe7a91d538d3b26a1473de906f830"
         )
     ]
 )
