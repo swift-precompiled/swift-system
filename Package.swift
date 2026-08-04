@@ -14,7 +14,8 @@ let package = Package(
     targets: [
         .target(
             name: "CSystem_Aggregation",
-            dependencies: ["CSystem"]
+            dependencies: ["CSystem"],
+            swiftSettings: [.define("SCIPIO_PRECOMPILED_BINARY_WRAPPER")]
         ),
         .binaryTarget(
             name: "CSystem",
@@ -23,12 +24,13 @@ let package = Package(
         ),
         .target(
             name: "SystemPackage_Aggregation",
-            dependencies: ["SystemPackage", "CSystem_Aggregation"]
+            dependencies: ["SystemPackage", "CSystem_Aggregation"],
+            swiftSettings: [.define("SCIPIO_PRECOMPILED_BINARY_WRAPPER")]
         ),
         .binaryTarget(
             name: "SystemPackage",
-            url: "https://github.com/swift-precompiled/swift-system/releases/download/1.7.5/SystemPackage-d9f4985e308be4f30939e67b3a208d9730ebe7a91d538d3b26a1473de906f830.xcframework.zip",
-            checksum: "d9f4985e308be4f30939e67b3a208d9730ebe7a91d538d3b26a1473de906f830"
+            url: "https://github.com/swift-precompiled/swift-system/releases/download/1.7.5/SystemPackage-f1af412a86b0b0f407568c4907677fb4212371baf5c25b0e8302c9ffabcd1d03.xcframework.zip",
+            checksum: "f1af412a86b0b0f407568c4907677fb4212371baf5c25b0e8302c9ffabcd1d03"
         )
     ]
 )
