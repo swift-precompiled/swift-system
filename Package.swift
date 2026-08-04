@@ -8,29 +8,34 @@ let package = Package(
     products: [
         .library(
             name: "SystemPackage",
-            targets: ["SystemPackage_Aggregation"]
+            targets: ["SystemPackage_PrecompiledProduct"]
         )
     ],
     targets: [
         .target(
-            name: "CSystem_Aggregation",
-            dependencies: ["CSystem"],
-            swiftSettings: [.define("SCIPIO_PRECOMPILED_BINARY_WRAPPER")]
+            name: "CSystem",
+            dependencies: ["CSystem_PrecompiledArchive"],
+            path: "Sources/CSystem",
+            publicHeadersPath: "include"
         ),
         .binaryTarget(
-            name: "CSystem",
-            url: "https://github.com/swift-precompiled/swift-system/releases/download/1.7.5/CSystem-e0f0d66ba6743424fc4376b962744c1b86b777a3b9afa0d7f10de8ea1996f634.xcframework.zip",
-            checksum: "e0f0d66ba6743424fc4376b962744c1b86b777a3b9afa0d7f10de8ea1996f634"
+            name: "CSystem_PrecompiledArchive",
+            url: "https://github.com/swift-precompiled/swift-system/releases/download/1.8.0/CSystem-e279ab7e1b03736fe25c057b054132a6f097237ded04ced1280778a2901a85b2.xcframework.zip",
+            checksum: "e279ab7e1b03736fe25c057b054132a6f097237ded04ced1280778a2901a85b2"
         ),
         .target(
             name: "SystemPackage_Aggregation",
-            dependencies: ["SystemPackage", "CSystem_Aggregation"],
+            dependencies: ["SystemPackage"],
             swiftSettings: [.define("SCIPIO_PRECOMPILED_BINARY_WRAPPER")]
         ),
         .binaryTarget(
             name: "SystemPackage",
-            url: "https://github.com/swift-precompiled/swift-system/releases/download/1.7.5/SystemPackage-f1af412a86b0b0f407568c4907677fb4212371baf5c25b0e8302c9ffabcd1d03.xcframework.zip",
-            checksum: "f1af412a86b0b0f407568c4907677fb4212371baf5c25b0e8302c9ffabcd1d03"
+            url: "https://github.com/swift-precompiled/swift-system/releases/download/1.8.0/SystemPackage-c22dff436130084c0a794e486024037e059fd41833b5841fbf4ea407e24864c3.xcframework.zip",
+            checksum: "c22dff436130084c0a794e486024037e059fd41833b5841fbf4ea407e24864c3"
+        ),
+        .target(
+            name: "SystemPackage_PrecompiledProduct",
+            dependencies: ["SystemPackage_Aggregation", "CSystem"]
         )
     ]
 )
